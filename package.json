@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-doh":"jest --detectOpenHandles",
     "dev": "node --watch src/index.js",
-    "start": "NODE__ENV=production node src/index.js"
+    "start": "NODE_ENV=production node src/index.js"
   },
   "repository": {
     "type": "git",

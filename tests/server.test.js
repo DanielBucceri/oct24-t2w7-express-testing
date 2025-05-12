@@ -16,6 +16,16 @@ describe("Make sure the server boots up properly", () => {
 			}
 		*/
 
-	})
+	});
+
+	test("post-test route reflects what we send in as teh body", async () => {
+		let response = await request(app).post("/post-test").send({
+			message: "post-test body test content"
+		});
+		console.log(Object.keys(response.body))
+
+		expect(response.body.receivedData.message).toBe("post-test body test content");
+	}
+	);
 
 })
